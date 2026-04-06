@@ -1,0 +1,128 @@
+<mxfile host="Electron" modified="2026-04-07T00:00:00.000Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36" version="24.0.0" type="device">
+  <diagram id="object-diagram" name="Object Diagram - Automated Grading System">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="white" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Student Object -->
+        <mxCell id="student-obj" value="john:Student&#xa;&#xa;studentID = &quot;S001&quot;&#xa;name = &quot;John Smith&quot;&#xa;email = &quot;john@university.edu&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="160" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Assignment Object -->
+        <mxCell id="assignment-obj" value="assign1:Assignment&#xa;&#xa;assignmentID = &quot;A001&quot;&#xa;title = &quot;Data Structures&quot;&#xa;dueDate = &quot;2026-04-15&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="160" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Submission Object -->
+        <mxCell id="submission-obj" value="sub001:Submission&#xa;&#xa;submissionID = &quot;SUB001&quot;&#xa;timestamp = &quot;2026-04-10 10:30:00&quot;&#xa;status = &quot;Processed&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="550" y="50" width="170" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Grade Object -->
+        <mxCell id="grade-obj" value="grade001:Grade&#xa;&#xa;gradeID = &quot;G001&quot;&#xa;score = 87.5&#xa;comments = &quot;Good work&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="50" width="160" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- GradingSystem Object -->
+        <mxCell id="grading-system-obj" value="gradeSystem:GradingSystem&#xa;&#xa;systemID = &quot;GS001&quot;&#xa;submissions = [sub001, sub002]&#xa;grades = [grade001, grade002]" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="240" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- PlagiarismChecker Object -->
+        <mxCell id="plagiarism-obj" value="plagChecker:PlagiarismChecker&#xa;&#xa;checkerID = &quot;PC001&quot;&#xa;threshold = 0.25&#xa;results = [result001]" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- TurnItIn Object -->
+        <mxCell id="turnitin-obj" value="turnItIn:TurnItInAPI&#xa;&#xa;apiKey = &quot;****(secret)&quot;&#xa;endpoint = &quot;api.turnitin.com&quot;&#xa;timeout = 30000" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="240" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- LMSConnector Object -->
+        <mxCell id="lms-connector-obj" value="lmsConn:LMSConnector&#xa;&#xa;connectionID = &quot;LMS001&quot;&#xa;credentials = &quot;****(secret)&quot;&#xa;status = &quot;Connected&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="240" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Professor Object -->
+        <mxCell id="professor-obj" value="prof:Professor&#xa;&#xa;professorID = &quot;P001&quot;&#xa;name = &quot;Dr. Jane Doe&quot;&#xa;email = &quot;jane@university.edu&quot;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=60;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;rounded=1;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="480" width="160" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- Links/Relationships -->
+        <!-- john submitted to assign1 -->
+        <mxCell id="link1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="student-obj" target="assignment-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link1-label" value="submits" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- assign1 contains sub001 -->
+        <mxCell id="link2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="assignment-obj" target="submission-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link2-label" value="contains" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- sub001 receives grade001 -->
+        <mxCell id="link3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="submission-obj" target="grade-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link3-label" value="receives" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- gradeSystem processes sub001 -->
+        <mxCell id="link4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system-obj" target="submission-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link4-label" value="processes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- gradeSystem generates grade001 -->
+        <mxCell id="link5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system-obj" target="grade-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link5-label" value="generates" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- plagChecker checks sub001 -->
+        <mxCell id="link6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="plagiarism-obj" target="submission-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link6-label" value="checks" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- plagChecker uses turnItIn -->
+        <mxCell id="link7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="plagiarism-obj" target="turnitin-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link7-label" value="uses" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- gradeSystem uses lmsConn -->
+        <mxCell id="link8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system-obj" target="lms-connector-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link8-label" value="uses" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- prof reviews grade001 -->
+        <mxCell id="link9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="professor-obj" target="grade-obj">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link9-label" value="reviews" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="link9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

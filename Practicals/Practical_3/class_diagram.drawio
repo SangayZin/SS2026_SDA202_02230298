@@ -1,0 +1,182 @@
+<mxfile host="Electron" modified="2026-04-07T00:00:00.000Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36" version="24.0.0" type="device">
+  <diagram id="class-diagram" name="Class Diagram - Automated Grading System">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="white" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Student Class -->
+        <mxCell id="student" value="Student" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="student-attr" value="- studentID: String&#xa;- name: String&#xa;- email: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="student">
+          <mxGeometry y="26" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="student-methods" value="+ submitAssignment()&#xa;+ viewGrade()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="student">
+          <mxGeometry y="76" width="160" height="44" as="geometry"/>
+        </mxCell>
+        
+        <!-- Assignment Class -->
+        <mxCell id="assignment" value="Assignment" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="assignment-attr" value="- assignmentID: String&#xa;- title: String&#xa;- dueDate: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="assignment">
+          <mxGeometry y="26" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="assignment-methods" value="+ getSubmissions()&#xa;+ checkDeadline()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="assignment">
+          <mxGeometry y="76" width="160" height="44" as="geometry"/>
+        </mxCell>
+        
+        <!-- Submission Class -->
+        <mxCell id="submission" value="Submission" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="50" width="160" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="submission-attr" value="- submissionID: String&#xa;- timestamp: DateTime&#xa;- sourceCode: String&#xa;- status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="submission">
+          <mxGeometry y="26" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="submission-methods" value="+ runCode()&#xa;+ getStatus()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="submission">
+          <mxGeometry y="86" width="160" height="44" as="geometry"/>
+        </mxCell>
+        
+        <!-- Grade Class -->
+        <mxCell id="grade" value="Grade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="50" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="grade-attr" value="- gradeID: String&#xa;- score: Double&#xa;- comments: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="grade">
+          <mxGeometry y="26" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="grade-methods" value="+ calculateScore()&#xa;+ recordGrade()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="grade">
+          <mxGeometry y="76" width="160" height="44" as="geometry"/>
+        </mxCell>
+        
+        <!-- GradingSystem Class -->
+        <mxCell id="grading-system" value="GradingSystem" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="grading-system-attr" value="- systemID: String&#xa;- submissions: List&#xa;- grades: List" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="grading-system">
+          <mxGeometry y="26" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="grading-system-methods" value="+ processSubmission()&#xa;+ executeCode()&#xa;+ generateReport()&#xa;+ syncWithLMS()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="grading-system">
+          <mxGeometry y="76" width="200" height="74" as="geometry"/>
+        </mxCell>
+        
+        <!-- PlagiarismChecker Class -->
+        <mxCell id="plagiarism" value="PlagiarismChecker" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="250" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="plagiarism-attr" value="- checkerID: String&#xa;- threshold: Double&#xa;- results: List" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="plagiarism">
+          <mxGeometry y="26" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="plagiarism-methods" value="+ checkInternalSimilarity()&#xa;+ checkTurnItIn()&#xa;+ generatePlagiarismReport()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="plagiarism">
+          <mxGeometry y="76" width="200" height="74" as="geometry"/>
+        </mxCell>
+        
+        <!-- TurnItIn Integration Class -->
+        <mxCell id="turnitin" value="TurnItInAPI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="250" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="turnitin-attr" value="- apiKey: String&#xa;- endpoint: String&#xa;- timeout: Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="turnitin">
+          <mxGeometry y="26" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="turnitin-methods" value="+ submitForCheck()&#xa;+ getResults()&#xa;+ retrieveSimilarityScore()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="turnitin">
+          <mxGeometry y="76" width="200" height="74" as="geometry"/>
+        </mxCell>
+        
+        <!-- LMSConnector Class -->
+        <mxCell id="lms-connector" value="LMSConnector" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="250" width="200" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="lms-connector-attr" value="- connectionID: String&#xa;- credentials: String&#xa;- status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="lms-connector">
+          <mxGeometry y="26" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="lms-connector-methods" value="+ syncGrades()&#xa;+ pushToLMS()&#xa;+ verifyConnection()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="lms-connector">
+          <mxGeometry y="76" width="200" height="74" as="geometry"/>
+        </mxCell>
+        
+        <!-- Professor Class -->
+        <mxCell id="professor" value="Professor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="480" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="professor-attr" value="- professorID: String&#xa;- name: String&#xa;- email: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="professor">
+          <mxGeometry y="26" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="professor-methods" value="+ reviewSubmission()&#xa;+ overrideGrade()&#xa;+ viewReport()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;html=1;whiteSpace=wrap;" vertex="1" parent="professor">
+          <mxGeometry y="76" width="160" height="44" as="geometry"/>
+        </mxCell>
+        
+        <!-- Relationships -->
+        <!-- Student submits Assignment -->
+        <mxCell id="rel1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="student" target="assignment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel1-label" value="submits" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Assignment has Submissions -->
+        <mxCell id="rel2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="assignment" target="submission">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel2-label" value="contains" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Submission receives Grade -->
+        <mxCell id="rel3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" edge="1" parent="1" source="submission" target="grade">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel3-label" value="receives" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- GradingSystem processes Submission -->
+        <mxCell id="rel4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system" target="submission">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel4-label" value="processes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- GradingSystem generates Grade -->
+        <mxCell id="rel5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system" target="grade">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel5-label" value="generates" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- PlagiarismChecker checks Submission -->
+        <mxCell id="rel6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="plagiarism" target="submission">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel6-label" value="checks" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- PlagiarismChecker uses TurnItIn -->
+        <mxCell id="rel7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="plagiarism" target="turnitin">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel7-label" value="uses" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- GradingSystem uses LMSConnector -->
+        <mxCell id="rel8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="grading-system" target="lms-connector">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel8-label" value="uses" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Professor reviews Grade -->
+        <mxCell id="rel9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="professor" target="grade">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel9-label" value="reviews/overrides" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="rel9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
